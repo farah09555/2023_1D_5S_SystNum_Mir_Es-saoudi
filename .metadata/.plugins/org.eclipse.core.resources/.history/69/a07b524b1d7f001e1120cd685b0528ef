@@ -1,0 +1,19 @@
+/*
+ * vu_meter.h
+ *
+ *  Created on: Nov 9, 2023
+ *      Author: farahmir19
+ */
+
+#ifndef INC_VU_METER_H_
+#define INC_VU_METER_H_
+
+typedef struct h_vu_struct{
+   uint8_t led[2];
+   uint8_t spi_buffer[3];
+} h_vu_t;
+
+
+
+
+#endif /* INC_VU_METER_H_ */

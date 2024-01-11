@@ -1,0 +1,47 @@
+// vu_meter.c
+#include "vu_meter.h"
+
+int vu_init(h_vu_t *h_vu) {
+    // Initialiser votre structure ou vos variables nécessaires
+    // ...
+
+    // Exemple : Initialiser la LED à l'état éteint
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+
+    // Autres initialisations si nécessaire
+
+    return 0;  // Vous pouvez retourner une valeur appropriée en cas de besoin
+}
+
+int vu_led(h_vu_t *h_vu, uint8_t port, uint8_t led, uint8_t state) {
+    // Réaliser un effet lumineux de votre choix
+    // ...
+
+    // Exemple : Modifier l'état de la LED en fonction du paramètre "state"
+    GPIO_TypeDef* gpioPort;
+
+    switch (port) {
+        case 0:
+            gpioPort = GPIOA;
+            break;
+        // Ajoutez d'autres cas si nécessaire
+
+        default:
+            return -1;  // Valeur de retour en cas d'erreur
+    }
+
+    switch (state) {
+        case 0:
+            HAL_GPIO_WritePin(gpioPort, led, GPIO_PIN_RESET);
+            break;
+        case 1:
+            HAL_GPIO_WritePin(gpioPort, led, GPIO_PIN_SET);
+            break;
+        // Ajoutez d'autres cas si nécessaire
+
+        default:
+            return -1;  // Valeur de retour en cas d'erreur
+    }
+
+    return 0;  // Vous pouvez retourner une valeur appropriée en cas de besoin
+}

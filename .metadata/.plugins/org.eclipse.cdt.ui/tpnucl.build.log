@@ -1,0 +1,10 @@
+17:25:42 **** Incremental Build of configuration Debug for project tpnucl ****
+make -j16 all 
+arm-none-eabi-size   tpnucl.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4940	     20	   1572	   6532	   1984	tpnucl.elf
+Finished building: default.size.stdout
+ 
+
+17:25:42 Build Finished. 0 errors, 0 warnings. (took 692ms)
+
